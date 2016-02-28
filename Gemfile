@@ -4,15 +4,17 @@ gem "rails", ">= 5.0.0.beta3", "< 5.1"
 
 gem "clearance", git: "https://github.com/thoughtbot/clearance.git"
 gem "coffee-rails", "~> 4.1.0"
+gem "foreman"
 gem "jquery-rails"
+gem "pg"
 gem "puma"
+gem "redis"
 gem "sass-rails", "~> 5.0"
-gem "sqlite3"
 gem "turbolinks", "~> 5.x"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
-  gem "byebug"
+  gem "pry"
 end
 
 group :development do

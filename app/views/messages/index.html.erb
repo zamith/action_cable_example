@@ -1,14 +1,32 @@
 <h1>Welcome</h1>
 
+<ul class="Users">
+  <% @users.each do |user| %>
+    <li><%= user.email %> - <%= user.status %></li>
+  <% end %>
+</ul>
+
 <%= form_for @message do |form| %>
   <%= form.label :body, "Message" %>
   <%= form.text_field :body %>
 
-  <%= form.submit %>
+  <%= form.submit data: { disable_with: false } %>
+
+  <%= link_to "Create Special Message", "/", id: "special_message" %>
 <% end %>
+
+<h2>General Room</h2>
 
 <ul class="Messages">
   <% @messages.each do |message| %>
+    <li><%= message.body %></li>
+  <% end %>
+</ul>
+
+<h2>Special Room</h2>
+
+<ul class="SpecialMessages">
+  <% @special_messages.each do |message| %>
     <li><%= message.body %></li>
   <% end %>
 </ul>

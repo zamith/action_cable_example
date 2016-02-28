@@ -1,0 +1,14 @@
+<h1>Welcome</h1>
+
+<%= form_for @message do |form| %>
+  <%= form.label :body, "Message" %>
+  <%= form.text_field :body %>
+
+  <%= form.submit %>
+<% end %>
+
+<ul class="Messages">
+  <% @messages.each do |message| %>
+    <li><%= message.body %></li>
+  <% end %>
+</ul>

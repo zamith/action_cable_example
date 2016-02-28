@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: "pages#welcome"
+  root to: "messages#index"
+
+  resources :messages, only: [:index, :create]
 
   mount ActionCable.server => '/cable'
 end
